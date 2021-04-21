@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block title  job.title %}
+{% block body %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+
+            </div>
+            <div class="col-md-4">
+                <h1> {{ job.title }}</h1>
+                <h2> {{ job.experience }} annee(s)</h2>
+                <div class="text-primary" style="font-size: 4rem;font-weight: bold;"> {{ job.formatedSalary }}</div>
+                <a href="#" class="btn btn-primary"> Postuler</a>
+            </div>
+        </div>
+        <p> {{ job.description | nl2br }}</p>
+        <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

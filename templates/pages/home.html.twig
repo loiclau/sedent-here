@@ -7,5 +7,23 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid beatae corporis cupiditate deleniti distinctio dolor, dolores explicabo, facilis fugit hic laboriosam minus molestias nobis officiis optio repellat, repudiandae sapiente voluptas.
         </p>
     </div>
+    <div class="container">
+        <h2> Dernieres annonces</h2>
+        <div class="row flex">
+            {% for job in jobs %}
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                             <h5 class="card-title">
+                                 <a href="{{ path('job.show', {id: job.id, slug: job.slug}) }}">{{ job.title }}</a>
+                             </h5>
+                            <p class="card-text">{{ job.city }} ({{ job.postalCode }})</p>
+                            <div class="text-primary"> {{ job.formatedSalary }} €</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
 
