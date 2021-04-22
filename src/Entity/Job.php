@@ -2,10 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\JobRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Cocur\Slugify\Slugify;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass=JobRepository::class)
  */
@@ -19,6 +18,7 @@ class Job
     private $id;
 
     /**
+     * @Assert\Length(min=5, max=255)
      * @ORM\Column(type="string", length=255)
      */
     private $title;
