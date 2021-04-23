@@ -1,0 +1,15 @@
+<div class="card mb-4">
+    <div class="card-body">
+        <h5>
+            <a href="{{ path('job.show', {slug: job.slug, id: job.id}) }}">
+                {{ job.title }}
+            </a>
+        </h5>
+        <p class="card-text">
+            {{ job.city }} ({{ job.postalCode }})
+        </p>
+        <div class="text-primary">
+            {{ job.formatedSalary }} €
+        </div>
+    </div>
+</div>

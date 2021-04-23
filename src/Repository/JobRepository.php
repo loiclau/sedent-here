@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Job;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 use ProxyManager\ProxyGenerator\Util\Properties;
@@ -22,13 +23,12 @@ class JobRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return Job[]
+     * @return Query
      */
-    public function findAllAvailable(): array
+    public function findAllAvailableQuery(): Query
     {
         return $this->findVisibleQuery()
-            ->getQuery()
-            ->getResult();
+            ->getQuery();
     }
 
     /**

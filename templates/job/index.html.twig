@@ -3,9 +3,16 @@
 {% block body %}
     <div class="container text-center">
         <h1> All Jobs </h1>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid beatae corporis cupiditate deleniti distinctio dolor, dolores explicabo, facilis fugit hic laboriosam minus molestias nobis officiis optio repellat, repudiandae sapiente voluptas.
-        </p>
+        <div class="row">
+            {% for job in jobs %}
+                <div class="col-md-4">
+                    {% include 'job/_job.html.twig' %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="pagination">
+            {{ knp_pagination_render(jobs) }}
+        </div>
     </div>
 {% endblock %}
 
