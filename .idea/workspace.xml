@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e731c270-1da2-427a-a976-7ca6e82a4b90" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/JobSearch.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/JobSearchType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Donald/Code/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../Donald/Code/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sedent-here.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sedent-here.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e4b31575-0153-4e93-b8f2-25d2e5f43c28.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e4b31575-0153-4e93-b8f2-25d2e5f43c28.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JobController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/JobRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/JobRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/job/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/JobFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/JobFixture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Job.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Job.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/JobType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/JobType.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +176,7 @@
       <option name="presentableId" value="Default" />
       <updated>1618926396461</updated>
       <workItem from="1618926398066" duration="45403000" />
-      <workItem from="1619188732232" duration="4345000" />
+      <workItem from="1619188732232" duration="8691000" />
     </task>
     <servers />
   </component>

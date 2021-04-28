@@ -16,12 +16,15 @@ class JobFixture extends Fixture
             $job = new Job();
             $job
                 -> setTitle($faker->words(3,true))
+                -> setCompany($faker->company)
+                -> setContract($faker->numberBetween(0,3))
                 -> setDescription($faker->sentences(3,true))
                 -> setExperience($faker->numberBetween(0,9))
                 -> setSalary($faker->numberBetween(30000,100000))
                 -> setCity($faker->city)
                 -> setAddress($faker->address)
                 -> setPostalCode($faker->postcode)
+                -> setIsRemoteOnly(false)
                 -> setIsAvailable(true);
             $manager->persist($job);
         }

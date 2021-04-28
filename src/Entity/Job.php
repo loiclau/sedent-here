@@ -5,11 +5,16 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Cocur\Slugify\Slugify;
 use Symfony\Component\Validator\Constraints as Assert;
+use App\Repository\JobRepository;
+
 /**
  * @ORM\Entity(repositoryClass=JobRepository::class)
  */
 class Job
 {
+
+    const CONTRACT = ['CDI', 'CDD', 'Stage'];
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -62,6 +67,21 @@ class Job
      * @ORM\Column(type="boolean", options={"default":true})
      */
     private $is_available;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $company;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $contract;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $is_remote_only;
 
     public function __construct()
     {
@@ -187,6 +207,42 @@ class Job
     public function setIsAvailable(bool $is_available = true): self
     {
         $this->is_available = $is_available;
+
+        return $this;
+    }
+
+    public function getCompany(): ?string
+    {
+        return $this->company;
+    }
+
+    public function setCompany(string $company): self
+    {
+        $this->company = $company;
+
+        return $this;
+    }
+
+    public function getContract(): ?int
+    {
+        return $this->contract;
+    }
+
+    public function setContract(int $contract): self
+    {
+        $this->contract = $contract;
+
+        return $this;
+    }
+
+    public function getIsRemoteOnly(): ?bool
+    {
+        return $this->is_remote_only;
+    }
+
+    public function setIsRemoteOnly(bool $is_remote_only): self
+    {
+        $this->is_remote_only = $is_remote_only;
 
         return $this;
     }
