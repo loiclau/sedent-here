@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Job;
+use App\Entity\JobSearch;
+use App\Form\JobSearchType;
 use App\Repository\JobRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
@@ -41,8 +43,12 @@ class JobController extends AbstractController
      */
     public function index(PaginatorInterface $paginator, Request $request): Response
     {
+        $search = new JobSearch();
+        $form = $this->createForm(JobSearchType::class, $search);
+        $form->handleRequest($request);
+
         $jobs = $paginator->paginate(
-            $this->repository->findAllAvailableQuery(),
+            $this->repository->findAllAvailableQuery($search),
             $request->query->getInt('page', 1),
             12
         );
@@ -50,7 +56,8 @@ class JobController extends AbstractController
             'job/index.html.twig',
             [
                 'current_menu' => 'job',
-                'jobs' => $jobs
+                'jobs' => $jobs,
+                'form' => $form->createView()
             ]
         );
     }

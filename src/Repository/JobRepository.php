@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Job;
+use App\Entity\JobSearch;
+use App\Form\JobSearchType;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
@@ -25,10 +27,16 @@ class JobRepository extends ServiceEntityRepository
     /**
      * @return Query
      */
-    public function findAllAvailableQuery(): Query
+    public function findAllAvailableQuery(JobSearch $search): Query
     {
-        return $this->findVisibleQuery()
-            ->getQuery();
+        $query = $this->findVisibleQuery();
+        if($search->getMinSalary()){
+            $query = $query
+                ->andWhere('j.salary >= :minSalary')
+                ->setParameter('minSalary', $search->getMinSalary());
+        }
+
+        return $query->getQuery();
     }
 
     /**

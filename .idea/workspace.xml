@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e731c270-1da2-427a-a976-7ca6e82a4b90" name="Default Changelist" comment="" />
+    <list default="true" id="e731c270-1da2-427a-a976-7ca6e82a4b90" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Entity/JobSearch.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/JobSearchType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Donald/Code/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../Donald/Code/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sedent-here.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sedent-here.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JobController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/JobRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/JobRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/job/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/index.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -118,9 +128,16 @@
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/cocur/slugify" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1rR68bxfktR2MhZ3fMeJ8L1huqM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -130,14 +147,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controller" />
+    <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Donald" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -160,11 +178,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1618926396461</updated>
-      <workItem from="1618926398066" duration="44172000" />
+      <workItem from="1618926398066" duration="45403000" />
+      <workItem from="1619188732232" duration="4345000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

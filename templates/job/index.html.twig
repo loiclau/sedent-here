@@ -1,7 +1,25 @@
 {% extends 'base.html.twig' %}
 {% block title 'All Jobs' %}
 {% block body %}
-    <div class="container text-center">
+    <div class="jumbotron">
+        <div class="container">
+            {{ form_start(form) }}
+            <div class="form-row">
+                <div class="col">
+                    {{ form_row(form.address) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.minSalary) }}
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary">Rechercher</button>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+    <div class="container mt-4 text-center">
         <h1> All Jobs </h1>
         <div class="row">
             {% for job in jobs %}
