@@ -4,12 +4,15 @@
     <div class="jumbotron">
         <div class="container">
             {{ form_start(form) }}
-            <div class="form-row">
+            <div class="form-row align-items-end">
                 <div class="col">
                     {{ form_row(form.address) }}
                 </div>
                 <div class="col">
                     {{ form_row(form.minSalary) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.technos) }}
                 </div>
                 <div class="col">
                     <button class="btn btn-primary">Rechercher</button>

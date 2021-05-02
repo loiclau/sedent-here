@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\JobSearch;
+use App\Entity\Techno;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -27,6 +29,13 @@ class JobSearchType extends AbstractType
                 'attr' => [
                     'placeholder' => 'salaire minimal'
                 ]
+            ])
+            ->add('technos', EntityType::class, [
+                'required' => false,
+                'label' => false,
+                'class' => Techno::class,
+                'choice_label' => 'name',
+                'multiple' => true
             ]);
     }
 

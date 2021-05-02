@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Job;
+use App\Entity\Techno;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -21,12 +23,19 @@ class JobType extends AbstractType
             ->add('description')
             ->add('experience')
             ->add('salary')
+            ->add('technos',
+                EntityType::class,
+                [
+                    'class' => Techno::class,
+                    'multiple' => true,
+                    'choice_label' => 'name'
+                ]
+            )
             ->add('city')
             ->add('address')
             ->add('postal_code')
             ->add('is_remote_only')
-            ->add('is_available')
-        ;
+            ->add('is_available');
     }
 
     public function configureOptions(OptionsResolver $resolver)

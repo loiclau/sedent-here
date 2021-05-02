@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e731c270-1da2-427a-a976-7ca6e82a4b90" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/php/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/php/vhosts/vhost.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sedent-here.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sedent-here.iml" afterDir="false" />
+    <list default="true" id="e731c270-1da2-427a-a976-7ca6e82a4b90" name="Default Changelist" comment="feat: add docker env">
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/AdminTechnoController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/techno/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/techno/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/techno/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/techno/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210420200435.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210420202422.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210420213710.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210422083550.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210428155024.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/AdminJobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/AdminJobController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Job.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Job.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/JobSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/JobSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/JobSearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/JobSearchType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/JobType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/JobType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/JobRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/JobRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/job/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/job/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/job/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/job/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/job/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +175,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../environnement-de-developpement-symfony-5-avec-docker-et-docker-compose/project/docker" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin/techno" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -183,13 +187,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/admin/techno" />
+      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
       <recent name="$PROJECT_DIR$/../environnement-de-developpement-symfony-5-avec-docker-et-docker-compose/project/docker" />
       <recent name="$PROJECT_DIR$/src/Controller" />
       <recent name="$PROJECT_DIR$/templates/admin/job" />
-      <recent name="$PROJECT_DIR$/templates/admin" />
-      <recent name="$PROJECT_DIR$/templates/job" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/../environnement-de-developpement-symfony-5-avec-docker-et-docker-compose/project/docker" />
       <recent name="$PROJECT_DIR$/templates/admin/job" />
@@ -207,8 +212,16 @@
       <workItem from="1619188732232" duration="25516000" />
       <workItem from="1619715895193" duration="11320000" />
       <workItem from="1619818422235" duration="1886000" />
-      <workItem from="1619894019704" duration="14615000" />
+      <workItem from="1619894019704" duration="25414000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: add docker env">
+      <created>1619920052861</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619920052861</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,5 +238,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: add docker env" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add docker env" />
   </component>
 </project>

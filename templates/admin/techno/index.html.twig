@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block title 'Gerer les technos' %}
+{% block body %}
+    <div class="container mt-4">
+        <h2> Gerer les technos</h2>
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for techno in technos %}
+                <tr>
+                    <td>{{ techno.name }}</td>
+                    <td>
+                        <a href="{{ path('admin.techno.edit', {id: techno.id}) }}" class="btn btn-secondary">Edit</a>
+                        <form method="post" action="{{ path('admin.techno.delete', {id: techno.id}) }}"
+                             onsubmit="return confirm('Supprimer?')" style="display: inline-block" >
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ techno.id) }}">
+                            <button class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-right">
+             <a href="{{ path('admin.techno.new') }}" class="btn btn-primary">Ajouter une techno</a>
+        </div>
+
+    </div>
+{% endblock %}

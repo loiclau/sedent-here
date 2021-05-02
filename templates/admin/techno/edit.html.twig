@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block title 'Editer la techno' %}
+{% block body %}
+    <div class="container mt-4">
+        <h2> Editer la techno</h2>
+        {{ include('admin/techno/_form.html.twig', {form:form, button: 'Editer'}) }}
+    </div>
+{% endblock %}
+

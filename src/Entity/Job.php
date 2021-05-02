@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Cocur\Slugify\Slugify;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -83,9 +85,15 @@ class Job
      */
     private $is_remote_only;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Techno::class, inversedBy="jobs")
+     */
+    private $technos;
+
     public function __construct()
     {
         $this->setCreatedAt(new \DateTime());
+        $this->technos = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -243,6 +251,33 @@ class Job
     public function setIsRemoteOnly(bool $is_remote_only): self
     {
         $this->is_remote_only = $is_remote_only;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Techno[]
+     */
+    public function getTechnos(): Collection
+    {
+        return $this->technos;
+    }
+
+    public function addTechno(Techno $techno): self
+    {
+        if (!$this->technos->contains($techno)) {
+            $this->technos[] = $techno;
+            $techno->addJob($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTechno(Techno $techno): self
+    {
+        if ($this->technos->removeElement($techno)) {
+            $techno->removeJob($this);
+        }
 
         return $this;
     }

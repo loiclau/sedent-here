@@ -36,6 +36,22 @@ class JobRepository extends ServiceEntityRepository
                 ->setParameter('minSalary', $search->getMinSalary());
         }
 
+        if($search->getTechnos()->count() > 0){
+            $k = 0;
+            foreach ($search->getTechnos() as $techno){
+                $query = $query
+                    ->andWhere(":techno$k MEMBER OF j.technos")
+                    ->setParameter("techno$k", $techno);
+                $k++;
+            }
+
+            $query = $query
+                ->andWhere('j.salary >= :minSalary')
+                ->setParameter('minSalary', $search->getMinSalary());
+        }
+
+
+
         return $query->getQuery();
     }
 

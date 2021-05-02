@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Job;
+use App\Entity\Techno;
 use App\Form\JobType;
 use App\Repository\JobRepository;
 use Doctrine\ORM\EntityManagerInterface;
