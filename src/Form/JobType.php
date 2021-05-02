@@ -28,7 +28,8 @@ class JobType extends AbstractType
                 [
                     'class' => Techno::class,
                     'multiple' => true,
-                    'choice_label' => 'name'
+                    'choice_label' => 'name',
+                    'attr' => ['class'=>'select-techno']
                 ]
             )
             ->add('city')

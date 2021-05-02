@@ -35,7 +35,8 @@ class JobSearchType extends AbstractType
                 'label' => false,
                 'class' => Techno::class,
                 'choice_label' => 'name',
-                'multiple' => true
+                'multiple' => true,
+                'attr' => ['class'=>'select-techno']
             ]);
     }
 
