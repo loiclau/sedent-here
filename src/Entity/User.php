@@ -5,10 +5,12 @@ namespace App\Entity;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Exception;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  */
 class User implements UserInterface, \Serializable
 {
@@ -20,7 +22,7 @@ class User implements UserInterface, \Serializable
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $username;
 
@@ -30,9 +32,19 @@ class User implements UserInterface, \Serializable
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="json")
      */
-    private $role;
+    private $roles = [];
+
+    /**
+     * @ORM\Column(type="string", length=255, unique=true)
+     */
+    private $email;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified = false;
 
     public function getId(): ?int
     {
@@ -63,21 +75,20 @@ class User implements UserInterface, \Serializable
         return $this;
     }
 
-    public function getRole(): ?string
+    public function setRoles(array $roles): self
     {
-        return $this->role;
-    }
-
-    public function setRole(string $role): self
-    {
-        $this->role = $role;
+        $this->roles = $roles;
 
         return $this;
     }
 
-    public function getRoles()
+    public function getRoles(): array
     {
-        return ['ROLE_ADMIN'];
+        $roles = $this->roles;
+        $roles[] = 'ROLE_USER';
+        $roles[] = 'ROLE_ADMIN';
+
+        return array_unique($roles);
     }
 
     public function getSalt()
@@ -95,8 +106,9 @@ class User implements UserInterface, \Serializable
         return serialize([
             $this->id,
             $this->username,
+            $this->email,
             $this->password,
-            $this->role
+            $this->roles
         ]);
     }
 
@@ -105,8 +117,33 @@ class User implements UserInterface, \Serializable
         list(
             $this->id,
             $this->username,
+            $this->email,
             $this->password,
-            $this->role
+            $this->roles
             ) = unserialize($data, ['allowed_classes' => false]);
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
+
+        return $this;
     }
 }

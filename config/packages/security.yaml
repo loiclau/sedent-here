@@ -18,6 +18,9 @@ security:
                 target: /
             form_login:
                 check_path: login
+            guard:
+                authenticators:
+                    - App\Security\UserAuthenticator
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
 

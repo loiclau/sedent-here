@@ -1,12 +1,13 @@
 {% extends 'base.html.twig' %}
 {% block title 'Sedent-Here' %}
 {% block body %}
-    <div class="jumbotron text-center">
-        <h1> Agence 1 </h1>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid beatae corporis cupiditate deleniti distinctio dolor, dolores explicabo, facilis fugit hic laboriosam minus molestias nobis officiis optio repellat, repudiandae sapiente voluptas.
-        </p>
-    </div>
+    {%  for message in app.flashes('success') %}
+        <div class="jumbotron text-center">
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        </div>
+    {% endfor %}
     <div class="container">
         <h2> Dernieres annonces</h2>
         <div class="row flex">
