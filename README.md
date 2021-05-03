@@ -19,3 +19,4 @@ Sedent-here is a location-based job site.
 * maildev
 * php 7.4
 * apache2
+* traefik

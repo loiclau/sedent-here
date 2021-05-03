@@ -39,12 +39,43 @@ services:
   www:
     build: ./docker/php
     container_name: www_docker_sedenthere
-    ports:
-      - "8080:80"
     volumes:
       - ./docker/php/vhosts:/etc/apache2/sites-enabled
       - ./:/var/www
     restart: always
+    labels:
+      - "traefik.http.routers.sedenthere.rule=Host(`sedenthere.traefik.me`)"
+      - "traefik.http.routers.sedenthere-tls.tls.domains[0].main=sedenthere.traefik.me"
+      - "traefik.http.routers.sedenthere-tls.tls.domains[0].sans=sedenthere-*.traefik.me"
+      - "traefik.http.routers.sedenthere.tls=true"
+    networks:
+      - dev
+
+  traefik:
+    restart: unless-stopped
+    container_name: traefik_docker_sedenthere
+    image: traefik:v2.0.2
+    ports:
+      - "80:80"
+      - "443:443"
+    labels:
+      - "traefik.http.services.traefik.loadbalancer.server.port=8080"
+    volumes:
+      - ./docker/traefik.yml:/etc/traefik/traefik.yml
+      - ./docker/tls.yml:/etc/traefik/tls.yml
+      - /var/run/docker.sock:/var/run/docker.sock
+      - certs:/etc/ssl/traefik
+    networks:
+      - dev
+
+  reverse-proxy-https-helper:
+    image: alpine
+    container_name: alpine_docker_sedenthere
+    command: sh -c "cd /etc/ssl/traefik
+      && wget traefik.me/cert.pem -O cert.pem
+      && wget traefik.me/privkey.pem -O privkey.pem"
+    volumes:
+      - certs:/etc/ssl/traefik
     networks:
       - dev
 
@@ -53,3 +84,4 @@ networks:
 
 volumes:
   db-data:
+  certs:
